@@ -74,6 +74,13 @@ The following is required to create or use this example.
 * `ng serve`
 * Open browser to `localhost:4200`
 
+## Commands Used:
+``` sh
+  ng new fundme
+  bower init
+  bower install bootstrap --save
+  
+```
 ## Angular 2 Generated Architecture with partial file and folder "names"
 * Generate Project with Angular 2 CLI (Command line Interface)
   * $ `ng new food`
