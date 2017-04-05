@@ -1,0 +1,20 @@
+{ "projects": [{
+    "category": "Films",
+    "title": "Pulse",
+    "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
+    "goal": 5000,
+    "vip": "Jon"
+    }, {
+      "category": "Social",
+      "title": "House",
+      "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
+      "goal": 5000,
+      "vip": "Jon"
+      }, {
+        "category": "Children",
+        "title": "Playground",
+        "description": "A live  album by the English progressive rock band originally released in 1995, on the label EMI in the United Kingdom.",
+        "goal": 5000,
+        "vip": "Jon"
+  }]
+}

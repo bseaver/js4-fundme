@@ -10,7 +10,7 @@ import { VipComponent } from './vip/vip.component';
 import { VipDetailComponent } from './vip-detail/vip-detail.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { routing } from './app.routing';
-import { masterFirebaseConfig } from './api-keys'
+import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
@@ -33,7 +33,8 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,12 +56,12 @@ The following is required to create or use this example.
 
 ``` js
   export const masterFirebaseConfig = {
-    apiKey: "your-apiKey-here",
-    authDomain: "your-authDomain-here.firebaseapp.com",
-    databaseURL: "https://your-databaseURL-here.firebaseio.com",
-    projectId: "your-projectId-here",
-    storageBucket: "your-storageBucket-here.appspot.com",
-    messagingSenderId: "your-messagingSenderId-here"
+    apiKey: 'your-apiKey-here',
+    authDomain: 'your-authDomain-here.firebaseapp.com',
+    databaseURL: 'https://your-databaseURL-here.firebaseio.com',
+    projectId: 'your-projectId-here',
+    storageBucket: 'your-storageBucket-here.appspot.com',
+    messagingSenderId: 'your-messagingSenderId-here'
   }
 ```
 
@@ -89,7 +89,7 @@ The following is required to create or use this example.
   touch src/app/app.routing.ts
   npm install angularfire2 firebase --save
   touch src/app/api-keys.ts
-  
+
 
 ```
 ## Angular 2 Generated Architecture with partial file and folder "names"
