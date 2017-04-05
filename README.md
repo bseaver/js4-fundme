@@ -90,6 +90,9 @@ The following is required to create or use this example.
   npm install angularfire2 firebase --save
   touch src/app/api-keys.ts
 
+  ng g service vip.service
+  ng g class vip.model
+
 
 ```
 ## Angular 2 Generated Architecture with partial file and folder "names"

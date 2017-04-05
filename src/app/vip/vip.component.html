@@ -1,3 +1,12 @@
-<p>
-  vip works!
-</p>
+<div *ngIf="loggedIn" >
+  <h3>Welcome {{vip.userName}}</h3>
+  <br>
+  <button (click)="signOut()" class="btn btn-info">Sign Out</button>
+</div>
+
+<div *ngIf="!loggedIn" class="form-group">
+  <label>Please enter your name:</label>
+  <input #userName type="text" class="form-control">
+  <br>
+  <button (click)="signIn(userName.value)" class="btn btn-info">Sign In</button>
+</div>
