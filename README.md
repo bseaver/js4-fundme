@@ -79,7 +79,18 @@ The following is required to create or use this example.
   ng new fundme
   bower init
   bower install bootstrap --save
+  ng g component home
+  ng g component about
+  ng g component vip
+  ng g component vip-detail
+  ng g component project-detail
+  ng g class project.model
+  ng g service project.service
+  touch src/app/app.routing.ts
+  npm install angularfire2 firebase --save
+  touch src/app/api-keys.ts
   
+
 ```
 ## Angular 2 Generated Architecture with partial file and folder "names"
 * Generate Project with Angular 2 CLI (Command line Interface)
