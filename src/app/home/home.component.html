@@ -8,8 +8,36 @@
   <option value="Social">Social</option>
   <option value="Films">Films</option>
 </select>
-<div *ngFor="let project of projects | category:filterByCategory">
+<div *ngFor="let project of projects | async | category:filterByCategory">
   <h3 class="clickable" (click)="checkDetails(project)">{{project.title}}</h3>
   <h3>{{project.description}}</h3>
   <h3>{{project.category}}</h3>
+</div>
+
+
+<br>
+<button (click)='showNewForm()' class='btn btn-info'>New Project</button>
+
+<div *ngIf="newForm">
+  <div class="form-group col-sm-6">
+    <h3>Add a new project:</h3>
+    <label>Title</label>
+    <input #newTitle class="form-control">
+    <label>Description</label>
+    <textarea #newDescription class="form-control" rows= 8></textarea>
+    <label>Goal</label>
+    <input #newGoal class="form-control">
+    <label>Project's owner</label>
+    <input #newVip class="form-control">
+    <label>Project category</label>
+    <select (change)="selectCategory($event.target.value)" class="form-control">
+      <option value="Children">Children</option>
+      <option value="Social">Social</option>
+      <option value="Films">Films</option>
+    </select>
+    <br>
+    <br>
+    <button (click)="submitForm(newTitle.value, newDescription.value,newGoal.value,newVip.value); newTitle.value='';  newDescription.value=''; newGoal.value=''; newVip.value=''; " class='btn btn-info'>Add this project</button>
+  </div>
+
 </div>
