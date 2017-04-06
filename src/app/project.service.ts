@@ -27,6 +27,19 @@ export class ProjectService {
     projectInFirebase.remove();
   }
 
+  updateProject(projectId: string, localProject: Project) {
+    // console.log("project key to edit: " );
+    // console.log(this.getProjectById(localProject.$key));
+    var projectEntryInFirebase = this.getProjectById(projectId);
+    projectEntryInFirebase.update({
+      category: localProject.category,
+      title: localProject.title,
+      description: localProject.description,
+      goal: localProject.goal,
+      vip: localProject.vip
+    });
+  }
+
 
 
 }

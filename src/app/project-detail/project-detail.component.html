@@ -4,12 +4,29 @@
   <h3>{{thisProject?.description }}</h3>
   <h3>Funding goal: ${{thisProject?.goal}}</h3>
   <button (click)="delete()">Delete</button>
-  <button (click)="update()">Update this project</button>
+  <button (click)="openEditForm()">Update this project</button>
 </div>
 
-<div *ngIf="update">
-  <form>
-
-  </form>
+<div *ngIf="editForm">
+  <div class="form-group col-sm-6">
+    <h3>Edit this information:</h3>
+    <label>Title</label>
+    <input [(ngModel)]="thisProject.title" class="form-control">
+    <label>Description</label>
+    <textarea [(ngModel)]="thisProject.description" class="form-control" rows= 8></textarea>
+    <label>Goal</label>
+    <input [(ngModel)]="thisProject.goal" class="form-control">
+    <label>Project's owner</label>
+    <input [(ngModel)]="thisProject.vip" class="form-control">
+    <label>Project category</label>
+    <select [(ngModel)]="thisProject.category" class="form-control">
+      <option value="Children">Children</option>
+      <option value="Social">Social</option>
+      <option value="Films">Films</option>
+    </select>
+    <br>
+    <br>
+    <button (click)="closeEditForm()">Close form</button>
+  </div>
 
 </div>

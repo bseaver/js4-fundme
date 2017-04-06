@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Project } from '../project.model';
@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class ProjectDetailComponent implements OnInit {
   projectId: string = null;
   thisProject;
+  editForm = false;
 
   constructor(
     private router: Router,
@@ -46,8 +47,13 @@ export class ProjectDetailComponent implements OnInit {
     }
   }
 
-  update() {
+  openEditForm() {
+    this.editForm = true;
+  }
 
+  closeEditForm() {
+    this.projectService.updateProject(this.projectId, this.thisProject);
+    this.editForm = false;
   }
 
 }
