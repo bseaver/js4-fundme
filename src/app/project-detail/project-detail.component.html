@@ -3,5 +3,13 @@
   <h3>Created by: {{thisProject?.vip}}</h3>
   <h3>{{thisProject?.description }}</h3>
   <h3>Funding goal: ${{thisProject?.goal}}</h3>
+  <button (click)="delete()">Delete</button>
+  <button (click)="update()">Update this project</button>
+</div>
+
+<div *ngIf="update">
+  <form>
+
+  </form>
 
 </div>

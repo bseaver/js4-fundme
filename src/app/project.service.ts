@@ -22,6 +22,11 @@ export class ProjectService {
     this.projects.push(newProject);
   }
 
+  deleteProject(projectId: string){
+    var projectInFirebase = this.getProjectById(projectId);
+    projectInFirebase.remove();
+  }
+
 
 
 }

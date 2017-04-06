@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 import { FirebaseObjectObservable } from 'angularfire2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-detail',
@@ -16,6 +17,7 @@ export class ProjectDetailComponent implements OnInit {
   thisProject;
 
   constructor(
+    private router: Router,
     private route:  ActivatedRoute,
     private location: Location,
     private projectService: ProjectService
@@ -35,6 +37,17 @@ export class ProjectDetailComponent implements OnInit {
         dataLastEmittedFromObserver.vip
       );
     });
+  }
+
+  delete(){
+    if (confirm("Are you sure you want to delete?")) {
+      this.projectService.deleteProject(this.projectId);
+      this.router.navigate(['/']);
+    }
+  }
+
+  update() {
+
   }
 
 }
