@@ -1,2 +1,3 @@
 
-  <h3>{{username}}'s Projects</h3>
+  <h3 *ngIf='username'>{{username}}'s Projects</h3>
+  <h3 *ngIf='!username'>Please <a routerLink='/vip'>Sign in</a></h3>
