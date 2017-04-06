@@ -2,7 +2,14 @@
   home works!
 </p>
 
-<div *ngFor="let project of projects | async">
+<select (change)="filterChange($event.target.value)">
+  <option value="all">All categories</option>
+  <option value="Children">Children</option>
+  <option value="Social">Social</option>
+  <option value="Films">Films</option>
+</select>
+<div *ngFor="let project of projects | category:filterByCategory">
   <h3 class="clickable" (click)="checkDetails(project)">{{project.title}}</h3>
   <h3>{{project.description}}</h3>
+  <h3>{{project.category}}</h3>
 </div>

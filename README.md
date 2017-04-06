@@ -50,7 +50,7 @@ The following is required to create or use this example.
     }
 }
 ```
-* Click Add Firebase to Web app and copy information displayed within the var config = {...} into a new file in the project src/app/api-keys.ts as follows:
+* Click `Overview`, `Add Firebase to your Web app` and copy information displayed within the var config = {...} into a new file in the project src/app/api-keys.ts as follows:
 
   In Project root, create file: src/app/api-keys.ts with
 
@@ -94,6 +94,8 @@ The following is required to create or use this example.
   ng g class vip.model
 
   npm install --save ng2-webstorage
+
+  ng g pipe category
 
 
 ```

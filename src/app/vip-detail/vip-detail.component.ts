@@ -8,12 +8,12 @@ import { VipService } from './../vip.service';
   providers: [VipService]
 })
 export class VipDetailComponent implements OnInit {
-  username:string;
+  username: string;
 
   constructor(private vipService: VipService) { }
 
   ngOnInit() {
-    this.username= this.vipService.getUser();
+    this.username = this.vipService.getUser();
   }
 
 }

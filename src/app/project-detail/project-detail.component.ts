@@ -13,7 +13,7 @@ import { FirebaseObjectObservable } from 'angularfire2';
 })
 export class ProjectDetailComponent implements OnInit {
   projectId: string = null;
-  thisProject: FirebaseObjectObservable<any>;
+  thisProject;
 
   constructor(
     private route:  ActivatedRoute,
@@ -25,7 +25,16 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameter) => {
       this.projectId = urlParameter['id'];
     });
-    this.thisProject = this.projectService.getProjectById(this.projectId);
+
+    this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+      this.thisProject = new Project(
+        dataLastEmittedFromObserver.category,
+        dataLastEmittedFromObserver.title,
+        dataLastEmittedFromObserver.description,
+        dataLastEmittedFromObserver.goal,
+        dataLastEmittedFromObserver.vip
+      );
+    });
   }
 
 }

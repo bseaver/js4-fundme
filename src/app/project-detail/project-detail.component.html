@@ -1,4 +1,7 @@
 <div>
-  <h3>{{(thisProject | async)?.title}}</h3>
+  <h2>{{thisProject?.title}}</h2>
+  <h3>Created by: {{thisProject?.vip}}</h3>
+  <h3>{{thisProject?.description }}</h3>
+  <h3>Funding goal: ${{thisProject?.goal}}</h3>
 
 </div>

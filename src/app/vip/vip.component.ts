@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { VipService } from './../vip.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { VipService } from './../vip.service';
   providers: [VipService]
 })
 
-export class VipComponent implements OnInit {
+export class VipComponent implements OnInit, DoCheck {
   userName: string;
 
   constructor(private vipService: VipService) { }
@@ -18,7 +18,7 @@ export class VipComponent implements OnInit {
 
   ngDoCheck() {
     this.userName = this.vipService.getUser();
-    console.log("ngDoCheck: " + this.userName)
+    console.log('ngDoCheck: ' + this.userName);
   }
 
   signIn(inputUserName: string) {
@@ -30,44 +30,3 @@ export class VipComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-// import {SessionStorageService} from 'ng2-webstorage';
-//
-// @Component({
-//   selector: 'app-vip',
-//   templateUrl: './vip.component.html',
-//   styleUrls: ['./vip.component.css'],
-//   providers: []
-// })
-//
-// export class VipComponent implements OnInit {
-//   userName: string;
-//
-//   constructor(private sessionSt: SessionStorageService) { }
-//
-//   ngOnInit() {
-//   }
-//
-//   ngDoCheck() {
-//     this.userName = this.sessionSt.retrieve('userName');
-//     console.log("ngDoCheck: " + this.userName)
-//   }
-//
-//   signIn(inputUserName: string) {
-//     inputUserName = inputUserName.trim();
-//     if (inputUserName) {
-//       this.sessionSt.store('userName', inputUserName);
-//     }
-//   }
-//
-//   signOut() {
-//     this.sessionSt.clear('userName');
-//   }
-//
-// }

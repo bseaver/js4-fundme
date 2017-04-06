@@ -11,15 +11,23 @@ import { ProjectService } from './../project.service';
   providers: [ProjectService]
 })
 export class HomeComponent implements OnInit {
-  projects: FirebaseListObservable<any[]>;
+  projects;
+  filterByCategory = 'all';
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.projects = this.projectService.getProjects();
+    this.projectService.getProjects().subscribe(dataLastEmittedFromObserver => {
+      this.projects = dataLastEmittedFromObserver;
+      console.log(this.projects);
+    });
   }
-  checkDetails(thisProject){
+  checkDetails(thisProject) {
     this.router.navigate(['projects', thisProject.$key]);
+  }
+
+  filterChange(chosen) {
+    this.filterByCategory = chosen;
   }
 
 }

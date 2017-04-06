@@ -13,6 +13,7 @@ import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import {Ng2Webstorage} from 'ng2-webstorage';
+import { CategoryPipe } from './category.pipe';
 
 
 export const firebaseConfig = {
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     AboutComponent,
     VipComponent,
     VipDetailComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,
