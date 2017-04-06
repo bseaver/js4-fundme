@@ -12,6 +12,8 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import {Ng2Webstorage} from 'ng2-webstorage';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,7 +36,8 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    Ng2Webstorage
   ],
   providers: [],
   bootstrap: [AppComponent]

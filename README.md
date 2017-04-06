@@ -93,6 +93,8 @@ The following is required to create or use this example.
   ng g service vip.service
   ng g class vip.model
 
+  npm install --save ng2-webstorage
+
 
 ```
 ## Angular 2 Generated Architecture with partial file and folder "names"

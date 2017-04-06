@@ -18,5 +18,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.projects = this.projectService.getProjects();
   }
+  checkDetails(thisProject){
+    this.router.navigate(['projects', thisProject.$key]);
+  }
 
 }

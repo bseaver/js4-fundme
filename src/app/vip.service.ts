@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Vip } from './vip.model';
+import {SessionStorageService} from 'ng2-webstorage';
 
 @Injectable()
 export class VipService {
-  vip: Vip;
+  constructor(private sessionSt: SessionStorageService) {
+}
 
-  constructor() {
-    this.vip = new Vip();
-    console.log('Vip Service Constructor');
+  getUser() {
+    return this.sessionSt.retrieve('userName');
   }
 
-  signIn(newUser) {
-    this.vip.userName = newUser;
-    this.vip.loggedIn = true;
+  signIn(inputUserName: string) {
+    inputUserName = inputUserName.trim();
+    if (inputUserName) {
+      this.sessionSt.store('userName', inputUserName);
+    }
   }
 
   signOut() {
-    this.vip.userName = '';
-    this.vip.loggedIn = false;
+    this.sessionSt.clear('userName');
   }
 }
